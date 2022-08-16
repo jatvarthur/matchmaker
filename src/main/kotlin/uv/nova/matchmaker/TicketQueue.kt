@@ -46,18 +46,10 @@ private data class PostTicketOut(
 )
 
 fun Routing.ticketQueue(queueService: TicketQueueService) {
-
     route("/queue") {
-
-        post<TicketIn> {ticketIn ->
+        post<TicketIn> { ticketIn ->
             queueService.enqeue(ticketIn.toTicket())
             call.respond(PostTicketOut(true, ticketIn.playerId))
         }
-
     }
 }
-
-
-
-
-

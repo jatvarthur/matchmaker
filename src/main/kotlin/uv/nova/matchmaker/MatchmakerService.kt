@@ -47,7 +47,6 @@ class MatchmakerService(val queueService: TicketQueueService) {
         worker.interrupt()
         worker.join()
     }
-
 }
 
 data class MatchmakingResult(
